@@ -1,6 +1,6 @@
 set(_AMENT_PACKAGE_NAME "ack_robot_description")
 set(ack_robot_description_VERSION "0.0.0")
-set(ack_robot_description_MAINTAINER "onur <onur.korkmaz@hotmail.com>")
+set(ack_robot_description_MAINTAINER "emre <emredemiroz173@gmail.com>")
 set(ack_robot_description_BUILD_DEPENDS )
 set(ack_robot_description_BUILDTOOL_DEPENDS "ament_cmake")
 set(ack_robot_description_BUILD_EXPORT_DEPENDS )
