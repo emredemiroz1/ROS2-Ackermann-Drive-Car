@@ -1,0 +1,14 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/emred/tas-gps/install/nav2_project/lib/python3.10/site-packages",
+        "/home/emred/tas-gps/install/moveon_control/lib/python3.10/site-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/emred/tas-gps/install/nav2_project/lib/python3.10/site-packages",
+        "/home/emred/tas-gps/install/moveon_control/lib/python3.10/site-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ]
+}
