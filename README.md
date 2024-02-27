@@ -26,7 +26,7 @@ Projeyi gelecekte şu yönlere geliştirmeyi planlamaktayım:
 Bu gelişim planları, projenin daha da geliştirilmesini ve genişletilmesini amaçlamaktadır. Projeye katkıda bulunmak veya geri bildirimde bulunmak istiyorsanız, lütfen bir konu açın veya çekme isteği gönderin.
 
 
+https://github.com/Emre-ino/ROS2-Ackermann-Drive-Car/assets/84645689/3a50fe1b-ba7c-4047-8ee2-319e8e52f113
 
 
-https://github.com/Emre-ino/ROS2-Ackermann-Drive-Car/assets/84645689/1a6526bd-4e7b-46c2-a7d9-057d0ee563dd
 
