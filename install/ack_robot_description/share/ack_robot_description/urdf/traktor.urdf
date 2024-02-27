@@ -83,7 +83,7 @@
   <collision>
     <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/> <!--  <mesh filename="package://your_package/meshes/your_mesh.stl"/> -->
     <geometry>
-      <cylinder length="0.3" radius="0.25"/>
+      <cylinder length="0.20" radius="0.25"/>
     </geometry>
   </collision>
 </link>
@@ -122,7 +122,7 @@
   <collision>
     <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/> <!--  <mesh filename="package://your_package/meshes/your_mesh.stl"/> -->
     <geometry>
-      <cylinder length="0.3" radius="0.4"/>
+      <cylinder length="0.20" radius="0.4"/>
     </geometry>
   </collision>
 </link>
@@ -188,7 +188,7 @@
   <collision>
     <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/> <!--  <mesh filename="package://your_package/meshes/your_mesh.stl"/> -->
     <geometry>
-      <cylinder length="0.3" radius="0.25"/>
+      <cylinder length="0.20" radius="0.25"/>
     </geometry>
   </collision>
 </link>
@@ -215,7 +215,7 @@
   <visual name="">
     <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
     <geometry>
-      <cylinder length="0.3" radius="0.4"/>
+      <cylinder length="0.20" radius="0.4"/>
     </geometry>
     <material name="">
       <color rgba="0.0 0.0 0.0 1.0"/>
@@ -225,7 +225,7 @@
   <collision>
     <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
     <geometry>
-      <cylinder length="0.3" radius="0.4"/> 
+      <cylinder length="0.20" radius="0.4"/> 
     </geometry>
   </collision>
 </link>

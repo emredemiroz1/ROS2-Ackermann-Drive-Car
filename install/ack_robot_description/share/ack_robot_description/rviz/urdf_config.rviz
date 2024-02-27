@@ -53,27 +53,15 @@ Visualization Manager:
       Frame Timeout: 15
       Frames:
         All Enabled: true
+        base_footprint:
+          Value: true
         base_link:
           Value: true
-        gps_link:
+        caster_wheel_link:
           Value: true
-        hokuyo_link:
+        left_wheel_link:
           Value: true
-        imu_link:
-          Value: true
-        odom:
-          Value: true
-        sag_arka:
-          Value: true
-        sag_on_dif:
-          Value: true
-        sag_on_teker:
-          Value: true
-        sol_arka:
-          Value: true
-        sol_on_dif:
-          Value: true
-        sol_on_teker:
+        right_wheel_link:
           Value: true
       Marker Scale: 1
       Name: TF
@@ -81,25 +69,13 @@ Visualization Manager:
       Show Axes: true
       Show Names: false
       Tree:
-        odom:
+        base_footprint:
           base_link:
-            gps_link:
+            caster_wheel_link:
               {}
-            hokuyo_link:
+            left_wheel_link:
               {}
-            imu_link:
-              {}
-            sag_arka:
-              {}
-            sag_on_dif:
-              {}
-            sag_on_teker:
-              {}
-            sol_arka:
-              {}
-            sol_on_dif:
-              {}
-            sol_on_teker:
+            right_wheel_link:
               {}
       Update Interval: 0
       Value: true
@@ -121,52 +97,26 @@ Visualization Manager:
         Expand Link Details: false
         Expand Tree: false
         Link Tree Style: Links in Alphabetic Order
+        base_footprint:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
         base_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        gps_link:
+        caster_wheel_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        hokuyo_link:
+        left_wheel_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        imu_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        sag_arka:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        sag_on_dif:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        sag_on_teker:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        sol_arka:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        sol_on_dif:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        sol_on_teker:
+        right_wheel_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -182,7 +132,7 @@ Visualization Manager:
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
-    Fixed Frame: odom
+    Fixed Frame: base_footprint
     Frame Rate: 30
   Name: root
   Tools:
@@ -224,21 +174,26 @@ Visualization Manager:
   Value: true
   Views:
     Current:
-      Angle: 0
-      Class: rviz_default_plugins/TopDownOrtho
+      Class: rviz_default_plugins/Orbit
+      Distance: 2.3706002235412598
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
+      Focal Point:
+        X: -0.03903194144368172
+        Y: -0.03162967413663864
+        Z: 0.049965329468250275
+      Focal Shape Fixed Size: true
+      Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Scale: 34.28458786010742
+      Pitch: 0.06539835780858994
       Target Frame: <Fixed Frame>
-      Value: TopDownOrtho (rviz_default_plugins)
-      X: -0.5340064167976379
-      Y: -0.12403954565525055
+      Value: Orbit (rviz)
+      Yaw: 1.6203972101211548
     Saved: ~
 Window Geometry:
   Displays:
@@ -256,5 +211,5 @@ Window Geometry:
   Views:
     collapsed: false
   Width: 1200
-  X: 70
-  Y: 197
+  X: 55
+  Y: 548
