@@ -11,3 +11,16 @@ GPS Modülü: Robot, dünya genelinde konum belirlemek için GPS sensörü kulla
 IMU (İnertial Measurement Unit): IMU sensörü, robotun ivme ve açısal hızını ölçerek konum ve hareketini izler.
 
 LIDAR Sensörü: Robot, çevresini tarayarak engelleri algılamak ve harita oluşturmak için LIDAR sensörü kullanmaktadır.
+
+
+Projeyi gelecekte şu yönlere geliştirmeyi planlamaktayım:
+
+- **Tam Otonom Yetenekler:** Robotun tam otonom bir şekilde hareket etmesini sağlamak için navigasyon ve harita oluşturma yeteneklerini güçlendirmeyi planlıyorum.
+
+- **Daha Fazla Algılama ve Sensör Entegrasyonu:** Projeye ek sensörler ekleyerek, çevresel algılamayı artırmayı ve daha fazla veri toplamayı hedefliyorum.
+
+- **Uzaktan Kontrol ve İzleme:** Robotun uzaktan kontrol edilebilmesi ve izlenebilmesi için bir kullanıcı arayüzü geliştirmeyi planlıyorum.
+
+- **Topluluk Katılımı:** Projeye katkıda bulunmak isteyen diğer geliştiricilere açık olacak bir topluluk katılımı sağlamayı düşünüyorum.
+
+Bu gelişim planları, projenin daha da geliştirilmesini ve genişletilmesini amaçlamaktadır. Projeye katkıda bulunmak veya geri bildirimde bulunmak istiyorsanız, lütfen bir konu açın veya çekme isteği gönderin.
