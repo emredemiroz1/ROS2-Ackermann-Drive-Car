@@ -24,3 +24,9 @@ Projeyi gelecekte şu yönlere geliştirmeyi planlamaktayım:
 - **Topluluk Katılımı:** Projeye katkıda bulunmak isteyen diğer geliştiricilere açık olacak bir topluluk katılımı sağlamayı düşünüyorum.
 
 Bu gelişim planları, projenin daha da geliştirilmesini ve genişletilmesini amaçlamaktadır. Projeye katkıda bulunmak veya geri bildirimde bulunmak istiyorsanız, lütfen bir konu açın veya çekme isteği gönderin.
+
+
+
+
+https://github.com/Emre-ino/ROS2-Ackermann-Drive-Car/assets/84645689/1a6526bd-4e7b-46c2-a7d9-057d0ee563dd
+
