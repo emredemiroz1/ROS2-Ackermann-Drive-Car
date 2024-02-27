@@ -1,0 +1,572 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="ackerman_robot">
+  
+  
+
+
+<link name="base_link">
+  <inertial>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <mass value="10"/>
+    <inertia ixx="24.166666666666668" ixy="0" ixz="0" iyy="28.333333333333336" iyz="0" izz="10.833333333333334"/>
+  </inertial>
+  <visual name="">
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/> <!--  <mesh filename="package://your_package/meshes/your_mesh.stl"/> -->
+    <geometry>
+      <box size="2.5 1.5 1"/>
+    </geometry>
+    <material name="">
+      <color rgba="1.0 0.0 0.0 1.0"/>
+      <texture filename=""/>
+    </material>
+  </visual>
+  <collision>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/> <!--  <mesh filename="package://your_package/meshes/your_mesh.stl"/> -->
+    <geometry>
+      <box size="2.5 1.5 1"/>
+    </geometry>
+  </collision>
+</link>
+
+
+
+
+
+<!-- SAĞ ÖN TEKER  -->
+
+<link name="sag_on_dif"> <!-- SAĞ TEKER DİFERANSİYEL -->
+  <visual>
+    <geometry>
+      <cylinder length="0.05" radius="0.02"/>
+    </geometry>
+    <material name="black"/>
+  </visual>
+  <collision>
+    <geometry>
+      <cylinder length="0.05" radius="0.02"/>
+    </geometry>
+  </collision>
+  <inertial>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <mass value="1"/>
+    <inertia ixx="0.07583333333333334" ixy="0" ixz="0" iyy="0.07583333333333334" iyz="0" izz="0.125"/>
+  </inertial>
+</link>
+
+<joint name="sag_on_dif_joint" type="revolute"> <!-- SAĞ TEKER DİFERANSİYEL BASE LİNKİ-->
+  <parent link="base_link"/>
+  <child link="sag_on_dif"/>
+  <origin xyz="0.75 -0.85 -0.5" rpy="1.5707 0 0"/>
+  <axis xyz="0 1 0"/>
+  <limit effort="100" velocity="1" lower="-1" upper="1"/>
+  <dynamics damping="0.0" friction="0.0"/>
+</joint>
+
+
+<link name="sag_on_teker"> <!-- SAĞ TEKER -->
+  <inertial>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <mass value="1"/>
+    <inertia ixx="0.07583333333333334" ixy="0" ixz="0" iyy="0.07583333333333334" iyz="0" izz="0.125"/>
+  </inertial>
+  <visual name="">
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/> <!--  <mesh filename="package://your_package/meshes/your_mesh.stl"/> -->
+    <geometry>
+      <cylinder length="0.20" radius="0.25"/>
+    </geometry>
+    <material name="">
+      <color rgba="0.0 0.0 0.0 1.0"/>
+      <texture filename=""/>
+    </material>
+  </visual>
+  <collision>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/> <!--  <mesh filename="package://your_package/meshes/your_mesh.stl"/> -->
+    <geometry>
+      <cylinder length="0.3" radius="0.25"/>
+    </geometry>
+  </collision>
+</link>
+
+
+<joint name="sag_on_dif_sag_on_teker" type="continuous"> <!-- SAĞ TEKER DİFERANSİYEL VE SAĞ TEKER JOİNTİ-->
+  <parent link="sag_on_dif"/>
+  <child link="sag_on_teker"/>
+  <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+  <axis xyz="0 0 -1"/>
+  <limit effort="100" velocity="100"/>
+  <dynamics damping="0.0" friction="0.0"/>
+</joint>
+
+<!-- SAĞ ARKA TEKERLEKLER -->
+
+
+
+
+<link name="sag_arka"> <!-- SAĞ ARKA TEKER -->
+  <inertial>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <mass value="1"/>
+    <inertia ixx="0.19" ixy="0" ixz="0" iyy="0.19" iyz="0" izz="0.32000000000000006"/>
+  </inertial>
+  <visual name="">
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/> <!--  <mesh filename="package://your_package/meshes/your_mesh.stl"/> -->
+    <geometry>
+      <cylinder length="0.20" radius="0.4"/>
+    </geometry>
+    <material name="">
+      <color rgba="0.0 0.0 0.0 1.0"/>
+      <texture filename=""/>
+    </material>
+  </visual>
+  <collision>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/> <!--  <mesh filename="package://your_package/meshes/your_mesh.stl"/> -->
+    <geometry>
+      <cylinder length="0.3" radius="0.4"/>
+    </geometry>
+  </collision>
+</link>
+
+
+<joint name="sag_arka_dif_joint" type="continuous"> <!-- SAĞ ARKA TEKER DİFERANSİYEL VE SAĞ ARKA TEKER JOİNTİ-->
+  <parent link="base_link"/>
+  <child link="sag_arka"/>
+    <origin xyz="-1.25 -0.85 -0.35" rpy="1.5707 0 0"/>
+  <axis xyz="0 0 -1"/>
+  <limit effort="100" velocity="100"/>
+  <dynamics damping="0.0" friction="0.0"/>
+</joint>
+
+
+<!-- SOL ÖN TEKERLEKLER -->
+
+<link name="sol_on_dif"> <!-- SOL ÖN TEKER DİFERANSİYEL -->
+  <inertial>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <mass value="1"/>
+    <inertia ixx="0.07583333333333334" ixy="0" ixz="0" iyy="0.07583333333333334" iyz="0" izz="0.125"/>
+  </inertial>
+  <visual>
+    <geometry>
+      <cylinder length="0.05" radius="0.02"/>
+    </geometry>
+    <collision>
+      <geometry>
+        <cylinder length="0.05" radius="0.02"/>
+      </geometry>
+    </collision>
+    <material name="black"/>
+  </visual>
+</link>
+
+<joint name="sol_on_dif_joint" type="revolute"> <!-- SOL ÖN TEKER DİFERANSİYEL BASE LİNKİ-->
+  <parent link="base_link"/>
+  <child link="sol_on_dif"/>
+  <origin xyz="0.75 0.85 -0.5" rpy="1.5707 0 0"/>
+  <axis xyz="0 1 0"/>
+  <limit effort="100" velocity="1" lower="-1" upper="1"/>
+  <dynamics damping="0.0" friction="0.0"/>
+</joint>
+
+
+<link name="sol_on_teker"> <!-- SOL ÖN TEKER -->
+  <inertial>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <mass value="1"/>
+    <inertia ixx="0.07583333333333334" ixy="0" ixz="0" iyy="0.07583333333333334" iyz="0" izz="0.125"/>
+  </inertial>
+  <visual name="">
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/> <!--  <mesh filename="package://your_package/meshes/your_mesh.stl"/> -->
+    <geometry>
+      <cylinder length="0.20" radius="0.25"/>
+    </geometry>
+    <material name="">
+      <color rgba="0.0 0.0 0.0 1.0"/>
+      <texture filename=""/>
+    </material>
+  </visual>
+  <collision>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/> <!--  <mesh filename="package://your_package/meshes/your_mesh.stl"/> -->
+    <geometry>
+      <cylinder length="0.3" radius="0.25"/>
+    </geometry>
+  </collision>
+</link>
+
+
+<joint name="sol_on_dif_sol_on_teker" type="continuous"> <!-- SOL ÖN TEKER DİFERANSİYEL VE SOL ÖN TEKER JOİNTİ-->
+  <parent link="sol_on_dif"/>
+  <child link="sol_on_teker"/>
+  <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+  <axis xyz="0 0 -1"/>
+  <limit effort="100" velocity="100"/>
+  <dynamics damping="0.0" friction="0.0"/>
+</joint>
+
+
+<!-- SOL ARKA TEKERLEKLER -->
+
+<link name="sol_arka"> <!-- SOL ARKA TEKER -->
+  <inertial>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <mass value="1"/>
+    <inertia ixx="0.19" ixy="0" ixz="0" iyy="0.19" iyz="0" izz="0.32000000000000006"/>
+  </inertial>
+  <visual name="">
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <geometry>
+      <cylinder length="0.3" radius="0.4"/>
+    </geometry>
+    <material name="">
+      <color rgba="0.0 0.0 0.0 1.0"/>
+      <texture filename=""/>
+    </material>
+  </visual>
+  <collision>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <geometry>
+      <cylinder length="0.3" radius="0.4"/> 
+    </geometry>
+  </collision>
+</link>
+
+
+
+<joint name="sol_arka_dif_joint" type="continuous"> <!-- SOL ARKA TEKER DİFERANSİYEL VE SOL ARKA TEKER JOİNTİ-->
+  <parent link="base_link"/>
+  <child link="sol_arka"/>
+    <origin xyz="-1.25 0.85 -0.35" rpy="1.5707 0 0"/>
+  <axis xyz="0 0 -1"/>
+  <limit effort="100" velocity="100"/>
+  <dynamics damping="0.0" friction="0.0"/>
+</joint>
+
+
+
+
+
+<!-- GPS PLUGİN AND LİNK,JOİNT -->
+
+
+
+<!-- GPS LINK -->
+<link name="gps_link">
+  <inertial>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <mass value="0.1"/>
+    <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+  </inertial>
+  <visual name="">
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <geometry>
+      <box size="0.1 0.1 0.1"/>
+    </geometry>
+    <material name="">
+      <color rgba="0.0 0.0 0.0 1.0"/>
+      <texture filename=""/>
+    </material>
+  </visual>
+  <collision>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <geometry>
+      <box size="0.1 0.1 0.1"/>
+    </geometry>
+  </collision>
+</link>
+
+<!-- GPS JOINT -->
+<joint name="gps_joint" type="fixed">
+  <parent link="base_link"/>
+  <child link="gps_link"/>
+  <origin xyz="0.0 0.0 0" rpy="0.0 0.0 0.0"/>
+</joint>
+
+<!-- GPS PLUGIN -->
+  <gazebo reference="gps_link">
+    <sensor name="gps_sensor" type="gps">
+      <always_on>true</always_on>
+      <update_rate>1.0</update_rate>
+      <plugin name="gps_controller" filename="libgazebo_ros_gps_sensor.so">
+        <ros>
+          <!-- <namespace>/br</namespace> -->
+          <remapping>gps_controller/out:=/gps/fix</remapping>
+        </ros>
+        <frame_name>gps_link</frame_name>
+        <offset>0 0 0</offset>
+        <drift>0.001 0.001 0.001</drift>
+        <gaussianNoise>0.05 0.05 0.05</gaussianNoise>
+        <velocityDrift>0.001 0.001 0.001</velocityDrift>
+        <velocityGaussianNoise>0.5 0.5 0.5</velocityGaussianNoise>
+      </plugin>
+    </sensor>
+    <material>Gazebo/Turquoise</material>
+  </gazebo>
+
+<!-- İMU SENSÖR LİNK,JOİNT -->
+
+<link name="imu_link">
+  <inertial>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <mass value="0.01"/>
+    <inertia ixx="0.0001" ixy="0.0" ixz="0.0" iyy="0.0001" iyz="0.0" izz="0.0001"/>
+  </inertial>
+  <visual name="">
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <geometry>
+      <box size="0.1 0.1 0.02"/>
+    </geometry>
+    <material name="">
+      <color rgba="1.0 0.0 0.0 1.0"/>
+      <texture filename=""/>
+    </material>
+  </visual>
+  <collision>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <geometry>
+      <box size="0.1 0.1 0.02"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="imu_joint" type="fixed">
+  <parent link="base_link"/>
+  <child link="imu_link"/>
+  <origin xyz="1.0 0.0 0" rpy="0.0 0.0 0.0"/>
+</joint>
+
+<!-- İMU SENSÖR PLUGİN -->
+
+  <gazebo reference="imu_link">
+    <sensor name="imu_sensor" type="imu">
+      <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
+        <ros>
+          <remapping>~/out:=/imu</remapping>
+        </ros>
+        <initial_orientation_as_reference>false</initial_orientation_as_reference>
+      </plugin>
+      <always_on>true</always_on>
+      <update_rate>100</update_rate>
+      <visualize>true</visualize>
+      <imu>
+        <angular_velocity>
+          <x>
+            <noise type="gaussian">
+              <mean>0.0</mean>
+              <stddev>2e-4</stddev>
+              <bias_mean>0.0000075</bias_mean>
+              <bias_stddev>0.0000008</bias_stddev>
+            </noise>
+          </x>
+          <y>
+            <noise type="gaussian">
+              <mean>0.0</mean>
+              <stddev>2e-4</stddev>
+              <bias_mean>0.0000075</bias_mean>
+              <bias_stddev>0.0000008</bias_stddev>
+            </noise>
+          </y>
+          <z>
+            <noise type="gaussian">
+              <mean>0.0</mean>
+              <stddev>2e-4</stddev>
+              <bias_mean>0.0000075</bias_mean>
+              <bias_stddev>0.0000008</bias_stddev>
+            </noise>
+          </z>
+        </angular_velocity>
+        <linear_acceleration>
+          <x>
+            <noise type="gaussian">
+              <mean>0.0</mean>
+              <stddev>1.7e-2</stddev>
+              <bias_mean>0.1</bias_mean>
+              <bias_stddev>0.001</bias_stddev>
+            </noise>
+          </x>
+          <y>
+            <noise type="gaussian">
+              <mean>0.0</mean>
+              <stddev>1.7e-2</stddev>
+              <bias_mean>0.1</bias_mean>
+              <bias_stddev>0.001</bias_stddev>
+            </noise>
+          </y>
+          <z>
+            <noise type="gaussian">
+              <mean>0.0</mean>
+              <stddev>1.7e-2</stddev>
+              <bias_mean>0.1</bias_mean>
+              <bias_stddev>0.001</bias_stddev>
+            </noise>
+          </z>
+        </linear_acceleration>
+      </imu>
+    </sensor>
+    <material>Gazebo/Turquoise</material>
+  </gazebo>
+
+<!-- LİDAR LİNK -->
+
+
+
+  <!-- Hokuyo Laser -->
+  <link name="hokuyo_link">
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+    <mesh filename="package://ackerman_ws/meshes/hokuyo.dae"/>
+      </geometry>
+    </collision>
+
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://ackerman_ws/meshes/hokuyo.dae"/>
+      </geometry>
+    </visual>
+
+    <inertial>
+      <mass value="1e-5" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
+    </inertial>
+  </link>
+
+
+  <joint name="hokuyo_joint" type="fixed">
+    <axis xyz="0 1 0" />
+    <origin xyz="1 0 0.51" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="hokuyo_link"/>
+  </joint>
+
+   <!-- hokuyo -->
+    <gazebo reference="hokuyo_link">
+      <sensor type="gpu_ray" name="head_hokuyo_sensor">
+        <pose>0 0 0 0 0 0</pose>
+        <visualize>true</visualize>
+        <update_rate>40</update_rate>
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>720</samples>
+              <resolution>1</resolution>
+              <min_angle>-3.14</min_angle>
+              <max_angle>3.14</max_angle>
+            </horizontal>
+          </scan>
+          <range>
+            <min>0.10</min>
+            <max>30.0</max>
+            <resolution>0.1</resolution>
+          </range>
+          <noise>
+            <type>gaussian</type>
+            <!-- Noise parameters based on published spec for Hokuyo laser
+                achieving "+-30mm" accuracy at range < 10m.  A mean of 0.0m and
+                stddev of 0.01m will put 99.7% of samples within 0.03m of the true
+                reading. -->
+            <mean>0.0</mean>
+            <stddev>0.01</stddev>
+          </noise>
+        </ray>
+        <plugin name="gazebo_ros_head_hokuyo_controller" filename="libgazebo_ros_gpu_laser.so">
+          <topicName>/scan</topicName>
+          <frameName>hokuyo_link</frameName>
+        </plugin>
+      </sensor>
+    </gazebo>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ACKERMANN DRİVE PLUGİN  -->
+<gazebo>
+  <plugin name="gazebo_ros_ackermann_drive" filename="libgazebo_ros_ackermann_drive.so">
+
+    <ros>
+      <!-- <namespace>demo</namespace> -->
+      <remapping>cmd_vel:=cmd_vel</remapping>
+      <remapping>odom:=odom</remapping>
+      <remapping>distance:=distance_demo</remapping>
+    </ros>
+
+    <update_rate>100.0</update_rate>
+
+    <!-- wheels -->
+    <front_left_joint>sol_on_dif_sol_on_teker</front_left_joint>
+    <front_right_joint>sag_on_dif_sag_on_teker</front_right_joint>
+    <rear_left_joint>sol_arka_dif_joint</rear_left_joint>
+    <rear_right_joint>sag_arka_dif_joint</rear_right_joint>
+    <left_steering_joint>sol_on_dif_joint</left_steering_joint>
+    <right_steering_joint>sag_on_dif_joint</right_steering_joint>
+
+
+    <!-- Max absolute steer angle for tyre in radians-->
+    <!-- Any cmd_vel angular z greater than this would be capped -->
+    <max_steer>0.6458</max_steer>
+
+    <!-- Max absolute steering angle of steering wheel -->
+    <max_steering_angle>7.85</max_steering_angle>
+
+    <!-- Max absolute linear speed in m/s -->
+    <max_speed>20</max_speed>
+
+    <!-- PID tuning -->
+    <left_steering_pid_gain>1500 0 1</left_steering_pid_gain>
+    <left_steering_i_range>0 0</left_steering_i_range>
+    <right_steering_pid_gain>1500 0 1</right_steering_pid_gain>
+    <right_steering_i_range>0 0</right_steering_i_range>
+    <linear_velocity_pid_gain>1000 0 1</linear_velocity_pid_gain>
+    <linear_velocity_i_range>0 0</linear_velocity_i_range>
+
+    <!-- output -->
+    <publish_odom>true</publish_odom>
+    <publish_odom_tf>true</publish_odom_tf>
+    <publish_wheel_tf>true</publish_wheel_tf>
+    <publish_distance>true</publish_distance>
+
+    <odometry_frame>odom</odometry_frame>
+    <robot_base_frame>base_link</robot_base_frame>
+
+  </plugin>
+</gazebo>
+
+
+<!-- LİNK COLORS  -->
+
+<gazebo reference="base_link">
+  <material>Gazebo/Red</material>
+</gazebo>
+<gazebo reference="sag_on_dif">
+  <material>Gazebo/Green</material>
+</gazebo>
+<gazebo reference="sol_on_dif">
+  <material>Gazebo/Green</material>
+</gazebo>
+<gazebo reference="sag_on_teker">
+  <material>Gazebo/Black</material>
+</gazebo>
+<gazebo reference="sol_on_teker">
+  <material>Gazebo/Black</material>
+</gazebo>
+<gazebo reference="sol_arka">
+  <material>Gazebo/Black</material>
+</gazebo>
+<gazebo reference="sag_arka">
+  <material>Gazebo/Black</material>
+</gazebo>
+
+
+</robot>

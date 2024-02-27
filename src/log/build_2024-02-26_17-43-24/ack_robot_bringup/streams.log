@@ -1,0 +1,18 @@
+[0.452s] Invoking command in '/home/emred/ackerman_ws/src/build/ack_robot_bringup': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/emred/tas-gps/install/nav2_project:/home/emred/tas-gps/install/moveon_control:/opt/ros/humble /usr/bin/cmake /home/emred/ackerman_ws/src/ack_robot_bringup -DCMAKE_INSTALL_PREFIX=/home/emred/ackerman_ws/src/install/ack_robot_bringup
+[0.589s] -- The C compiler identification is GNU 11.4.0
+[0.704s] -- The CXX compiler identification is GNU 11.4.0
+[0.719s] -- Detecting C compiler ABI info
+[0.832s] -- Detecting C compiler ABI info - done
+[0.839s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.839s] -- Detecting C compile features
+[0.840s] -- Detecting C compile features - done
+[0.845s] -- Detecting CXX compiler ABI info
+[0.968s] -- Detecting CXX compiler ABI info - done
+[0.975s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.975s] -- Detecting CXX compile features
+[0.976s] -- Detecting CXX compile features - done
+[0.981s] -- Found ament_cmake: 1.3.8 (/opt/ros/humble/share/ament_cmake/cmake)
+[1.165s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[1.362s] -- Configuring done
+[1.365s] -- Generating done
+[1.366s] -- Build files have been written to: /home/emred/ackerman_ws/src/build/ack_robot_bringup

@@ -1,0 +1,1 @@
+Invoking command in '/home/emred/ackerman_ws/src/build/ack_robot_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/emred/tas-gps/install/nav2_project:/home/emred/tas-gps/install/moveon_control:/opt/ros/humble /usr/bin/cmake /home/emred/ackerman_ws/src/ack_robot_description -DCMAKE_INSTALL_PREFIX=/home/emred/ackerman_ws/src/install/ack_robot_description

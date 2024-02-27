@@ -1,0 +1,1 @@
+Invoking command in '/home/emred/ackerman_ws/src/build/mybot_control': /usr/bin/cmake /home/emred/ackerman_ws/src/mybot_ws/src/mybot_control -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/home/emred/ackerman_ws/src/install/mybot_control
